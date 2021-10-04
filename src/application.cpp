@@ -22,10 +22,6 @@ void Application::run()
     ant_population = new Ant[ANT_POPULATION_COUNT];
     sf::Clock dt_clock;
     startTickingThreads();
-    base_shape = sf::CircleShape(BASE_SIZE);
-    base_shape.setFillColor(BASE_COLOR);
-    base_shape.setOrigin(sf::Vector2f(BASE_SIZE, BASE_SIZE));
-    base_shape.setPosition(0.0f, 0.0f);
     window->setView(*view);
     while (window->isOpen())
     {
@@ -119,7 +115,7 @@ void Application::drawObjects()
 {
     world->draw(window, draw_pheromones);
     Ant::drawAll(window);
-    window->draw(base_shape);
+    world->drawBase(window);
     drawUI();
 }
 

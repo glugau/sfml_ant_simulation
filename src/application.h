@@ -45,7 +45,6 @@ private:
 	std::vector<std::thread> ant_tick_threads;
 	std::vector<sf::Vector2i> food_spawn_offsets;
 	Ant* ant_population;
-	sf::CircleShape base_shape;
 	sf::Font font;
 };
 

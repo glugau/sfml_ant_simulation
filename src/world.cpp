@@ -18,6 +18,9 @@ World::World(unsigned int width, unsigned int height)
 			float world_max_x = world_min_x + WORLD_GRID_CELL_SIZE;
 			float world_max_y = world_min_y + WORLD_GRID_CELL_SIZE;
 
+			sf::Vector2f world_position = sf::Vector2f(x * WORLD_GRID_CELL_SIZE + WORLD_GRID_CELL_SIZE / 2.0f, y * WORLD_GRID_CELL_SIZE + WORLD_GRID_CELL_SIZE / 2.0f);
+			float dist2 = world_position.x * world_position.x + world_position.y * world_position.y;
+
 			sf::Vertex vertex1, vertex2, vertex3, vertex4;
 			vertex1.position = sf::Vector2f(world_min_x, world_min_y);
 			vertex2.position = sf::Vector2f(world_max_x, world_min_y);
@@ -28,6 +31,18 @@ World::World(unsigned int width, unsigned int height)
 			render_vertices.push_back(vertex2);
 			render_vertices.push_back(vertex3);
 			render_vertices.push_back(vertex4);
+
+			if (dist2 < BASE_SIZE * BASE_SIZE)
+			{
+				vertex1.color = BASE_COLOR;
+				vertex2.color = BASE_COLOR;
+				vertex3.color = BASE_COLOR;
+				vertex4.color = BASE_COLOR;
+				base_vertices.push_back(vertex1);
+				base_vertices.push_back(vertex2);
+				base_vertices.push_back(vertex3);
+				base_vertices.push_back(vertex4);
+			}
 		}
 	}
 }
@@ -164,4 +179,9 @@ void World::draw(sf::RenderWindow* window, bool draw_pheromones)
 	}
 
 	window->draw(&render_vertices[0], render_vertices.size(), sf::Quads);
+}
+
+void World::drawBase(sf::RenderWindow* window)
+{
+	window->draw(&base_vertices[0], base_vertices.size(), sf::Quads);
 }

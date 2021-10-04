@@ -41,7 +41,7 @@
 #define WORLD_FOOD_MAX_AMOUNT Settings::world_food_max_amount // number set on click of the mouse
 #define WORLD_FOOD_MOUSE_RADIUS 8 // cells
 
-#define BASE_SIZE 25.0f
+#define BASE_SIZE 35.0f
 #define BASE_COLOR (sf::Color::Yellow)
 
 #define DEFAULT_TIMESCALE 1.0f

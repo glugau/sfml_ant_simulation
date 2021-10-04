@@ -41,8 +41,10 @@ public:
 	int minY();
 	int maxY();
 	void draw(sf::RenderWindow* window, bool draw_pheromones);
+	void drawBase(sf::RenderWindow* window);
 private:
 	std::vector<sf::Vertex> render_vertices;
+	std::vector<sf::Vertex> base_vertices;
 	PheromoneCell* world_arr;
 	unsigned int world_width;
 	unsigned int world_height;
