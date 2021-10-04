@@ -32,4 +32,5 @@ The red pixels are the "to food" pheromones, the blue pixels are the "to nest" p
 | Left Click | Add food at the location of the cursor. |
 | Right Click | Move the camera relative to your cursor position. |
 | Mouse Wheel Up/Down | Zoom In/Out |
+| P | Toggle visibility of pheromones On/Off |
 |GUI Arrows (Top Left of the window) | Speed up / Slow down the simulation |
