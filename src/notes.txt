@@ -1,0 +1,4 @@
+TODO: 
+-> Boredom (random chance of not following trail)
+-> KeyBinds for controls
+-> INI settings
