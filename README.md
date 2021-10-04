@@ -1,6 +1,8 @@
 # C++/SFML Ant Simulation
 
 This program tries to emulate the behavior of a colony of ants.
+![Image 1](https://imgur.com/47u7g6c)
+![Image 2](https://imgur.com/c6V7V1o)
 
 ## How it works
 The number of ants is predefined, and the nest is located at (0, 0). When the program begins, ants immediately start randomly moving. While they move, they release a "to nest" pheromone which doesn't affect any ant directly. 
