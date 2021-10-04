@@ -27,6 +27,8 @@ Download the latest release [here](https://github.com/glugau/sfml_ant_simulation
 To start the simulation, launch **Ant_Simulation.exe**.
 You can tweak some settings in the **settings.ini** file, like the size of the world, the number of ants or the number of threads. A backup file named **default_settings.ini** is also provided, as these are the values I had the best results with.
 
+The red pixels are the "to food pheromones", the blue pixels are the "to nest" pheromones, and the green pixels are food.
+
 ## Controls
 |KEY|ACTION  |
 |--|--|
