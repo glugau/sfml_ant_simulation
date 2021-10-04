@@ -74,6 +74,11 @@ void Application::handleEvents()
         case sf::Event::MouseButtonReleased:
             block_clicks = false;
             break;
+        case sf::Event::KeyPressed:
+            if (event.key.code == sf::Keyboard::P)
+            {
+                draw_pheromones = !draw_pheromones;
+            }
         }
     }
 }
@@ -112,7 +117,7 @@ void Application::init()
 
 void Application::drawObjects()
 {
-    world->draw(window);
+    world->draw(window, draw_pheromones);
     Ant::drawAll(window);
     window->draw(base_shape);
     drawUI();

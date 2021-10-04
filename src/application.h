@@ -32,6 +32,7 @@ private:
 	void drawUI();
 	void changeTimescale();
 
+	bool draw_pheromones = true;
 	bool block_clicks = false;
 	sf::Text slow_down_text;
 	sf::Text speed_up_text;

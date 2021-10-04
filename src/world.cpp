@@ -9,7 +9,7 @@ World::World(unsigned int width, unsigned int height)
 	: world_width{width}, world_height{height}
 {
 	world_arr = new PheromoneCell[(unsigned long long)width * (unsigned long long)height]; // casts to remove warnings
-	for (int y = minY(); y <= maxY(); ++y)
+	for (int y = minY(); y < maxY(); ++y)
 	{
 		for (int x = minX(); x <= maxX(); ++x)
 		{
@@ -127,7 +127,7 @@ static sf::Color getCellColor(float max_to_base, float max_to_food, float max_fo
 	return color;
 }
 
-void World::draw(sf::RenderWindow* window)
+void World::draw(sf::RenderWindow* window, bool draw_pheromones)
 {
 	float max_base = 1.0f;
 	float max_food = 1.0f;
@@ -149,7 +149,11 @@ void World::draw(sf::RenderWindow* window)
 	{
 		for (int x = minX(); x <= maxX(); ++x)
 		{
-			sf::Color color = getCellColor(max_base, max_food, WORLD_FOOD_MAX_AMOUNT, (*this)[x][y].getToBase(), (*this)[x][y].getToFood(), (*this)[x][y].getFood());
+			sf::Color color;
+			if(draw_pheromones)
+				 color = getCellColor(max_base, max_food, WORLD_FOOD_MAX_AMOUNT, (*this)[x][y].getToBase(), (*this)[x][y].getToFood(), (*this)[x][y].getFood());
+			else
+				color = getCellColor(max_base, max_food, WORLD_FOOD_MAX_AMOUNT, 0.0f, 0.0f, (*this)[x][y].getFood());
 			render_vertices[index].color = color;
 			render_vertices[index + 1ll].color = color;
 			render_vertices[index + 2ll].color = color;

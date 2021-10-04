@@ -40,7 +40,7 @@ public:
 	int maxX();
 	int minY();
 	int maxY();
-	void draw(sf::RenderWindow* window);
+	void draw(sf::RenderWindow* window, bool draw_pheromones);
 private:
 	std::vector<sf::Vertex> render_vertices;
 	PheromoneCell* world_arr;
