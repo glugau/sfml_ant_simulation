@@ -3,10 +3,7 @@
 This program tries to emulate the behavior of a colony of ants.
 
 <p align="center">
-  <img src="https://i.imgur.com/47u7g6c.png"/>
-</p>
-<p align="center">
-  <img src="https://i.imgur.com/c6V7V1o.png"/>
+  <img src="https://i.imgur.com/OD5tTIq.png"/>
 </p>
 
 ## How it works
